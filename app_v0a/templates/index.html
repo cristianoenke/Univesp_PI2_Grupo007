@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webapp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="buttons-container">
+        <button class="main-button" id="alunos-btn">Alunos</button>
+        <button class="main-button" id="instrutores-btn">Instrutores</button>
+        <button class="main-button" id="equipamentos-btn">Equipamentos</button>
+        
+        <div id="sub-buttons" style="display: none;">
+            <button class="sub-button" id="visualizar-alunos-btn">Visualizar Alunos</button>
+            <button class="sub-button" id="inserir-aluno-btn">Inserir Aluno</button>
+            <button class="sub-button" id="back-btn">Voltar</button>
+        </div>
+
+        <div id="form-container" style="display: none;">
+            <form id="aluno-form" action={{url_for('registro_aluno')}} method="POST">
+                <label for="nome">Nome:</label>
+                <input title="Nome" placeholder="Nome do aluno" type="text" name="aluno_name" required> <br>            
+                <label for="mail">E-Mail:</label>
+                <input title="E-mail" placeholder="E-mail do aluno" type="email" name="aluno_email" required> <br>
+                  <label for="age">Idade:</label>
+  			<input title="Idade" placeholder="Idade do Aluno" type="number" min="1" max="125" step="1" name="aluno_idade" required> <br>             
+                <button type="submit">Enviar</button>
+                <button type="button" id="back-form-btn">Voltar</button>
+            </form>
+        </div>
+        
+        <div id="options-buttons" style="display: none;">
+            <button class="sub-button" id="todos-btn">Todos</button>
+            <button class="sub-button" id="horarios-btn">Horários</button>
+            <button class="sub-button" id="exercicios-btn">Exercícios</button>
+            <button class="sub-button" id="instrutor-btn">Instrutor</button>
+            <button class="sub-button" id="back-options-btn">Voltar</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
 
