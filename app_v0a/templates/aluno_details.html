@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Aluno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="details-container">
+        <h1>Detalhes do Aluno</h1>
+        {% if aluno %}
+            <p><strong>Nome:</strong> {{ aluno.namedb }}</p>
+            <p><strong>Idade:</strong> {{ aluno.idadedb }}</p>
+        {% else %}
+            <p>Aluno não encontrado.</p>
+        {% endif %}
+        <button onclick="window.location.href='/'">Voltar</button>
+    </div>
+</body>
+</html>
