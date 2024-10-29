@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Treino</title>
+</head>
+<body>
+    <h1>Adicionar Treino</h1>
+    <form action="{{ url_for('add_treino') }}" method="post">
+        <label for="nome">Nome do Treino:</label>
+        <input type="text" id="nome_treino" name="nome_treino" required><br><br>
+        
+        <label>Exercicios:</label><br>
+        {% for exercicio in exercicios %}
+            <input type="checkbox" name="exercicios" value="{{ exercicio.id }}"> {{ exercicio.nome_exerc }}<br>
+        {% endfor %}
+        
+        <br>
+        <input type="submit" value="Adicionar Treino">
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Grupos</title>
+</head>
+<body>
+    <h1>Treinos Criados</h1>
+    {% if treinos %}
+        <ul>
+            {% for treino in treinos %}
+                <li>
+                    <strong>{{ treino.nome }}</strong>: 
+                    {% if treino.exercicios %}
+                        {{ treino.exercicios | map(attribute='nome_exerc') | join(', ') }}
+                    {% else %}
+                        Nenhuma pessoa neste grupo.
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há Treinos cadastrados.</p>
+    {% endif %}
+    <a href="{{ url_for('add_exercicio') }}">Adicionar Exercicio</a> |
+    <a href="{{ url_for('add_treino') }}">Adicionar Treino</a>
+</body>
+</html>
