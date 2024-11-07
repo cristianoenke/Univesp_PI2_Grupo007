@@ -70,8 +70,8 @@ treinos_do_instrutor = db.Table('treinos_do_instrutor',
 )
 
 
-# with app.app_context():
-#     db.create_all() 
+with app.app_context():
+    db.create_all() 
 
 
 @app.route('/')
