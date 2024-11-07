@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:postgres123@localhost/academia'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://grupo07:EEuGL3NhjfpWhxayM2bjtAoCa6qjsn38@dpg-csm11g3qf0us73fr1330-a.oregon-postgres.render.com/academia_lwd6'
 db = SQLAlchemy(app)
 
 # Classe Instrutor
