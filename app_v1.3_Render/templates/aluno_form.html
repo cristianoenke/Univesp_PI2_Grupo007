@@ -17,7 +17,7 @@
          <strong><label for="nome">Fone:</label></strong>
          <input type="text" id="fone_aluno" name="fone_aluno" required><br><br>
        
-         </strong><label for="nome">Data de Nascimento:</label></strong>
+         <strong><label for="nome">Data de Nascimento:</label></strong>
          <input type="date" id="nasc_aluno" name="nasc_aluno" required><br><br>
 
          <strong><label for="nome">Sexo:</label></strong>
@@ -31,11 +31,11 @@
             <strong><input type="checkbox" name="instrutores" value="{{ instrutor.id }}"> {{ instrutor.nome_instrutor }}</strong><br>
         {% endfor %}
         
-        <h3>Selecione os treinos e o período para cada dia da semana:</h3>
+        <h3><strong>Selecione os treinos e o período para cada dia da semana:<strong></h3>
         {% for dia in ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo'] %}
-            </strong><label>{{ dia.capitalize() }}:</label></strong><br>
+            <strong><label>{{ dia.capitalize() }}:</label></strong><br>
             {% for treino in treinos %}
-                <input type="checkbox" name="treinos_{{ dia }}" value="{{ treino.id }}"> {{ treino.nome }}
+                <strong><input type="checkbox" name="treinos_{{ dia }}" value="{{ treino.id }}"> {{ treino.nome }}</strong>
                 <select name="periodo_{{ dia }}_{{ treino.id }}">
                     <option value="manha">Manhã</option>
                     <option value="tarde">Tarde</option>
