@@ -14,12 +14,12 @@
         <ul>
             {% for treino in treinos %}
                 <li>
-                    <strong>{{ treino.nome }}</strong>: 
+                    <strong>{{ treino.nome }}: 
                     {% if treino.exercicios %}
                         {{ treino.exercicios | map(attribute='nome_exerc') | join(', ') }}
                     {% else %}
                         Nenhum exercicio neste treino.
-                    {% endif %}
+                    {% endif %}</strong>
                 </li>
             {% endfor %}
         </ul>
