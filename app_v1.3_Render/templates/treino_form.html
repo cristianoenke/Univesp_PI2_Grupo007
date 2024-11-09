@@ -19,7 +19,7 @@
             <input type="checkbox" name="exercicios" value="{{ exercicio.id }}"> {{ exercicio.nome_exerc }}<br>
         {% endfor %}
         </strong><br>
-         <label>Instrutor:</label><br><strong>
+         <strong><label>Instrutor:</label><br>
          {% for instrutor in instrutores %}
              <input type="checkbox" name="instrutores" value="{{ instrutor.id }}"> {{ instrutor.nome_instrutor }}</strong><br>
          {% endfor %}
