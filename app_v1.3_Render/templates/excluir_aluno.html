@@ -15,8 +15,8 @@
             {% for aluno in alunos %}
                 <li>
                     <label>
-                        <input type="checkbox" name="aluno_ids" value="{{ aluno.id }}">
-                        {{ aluno.nome_aluno }}
+                        <strong><input type="checkbox" name="aluno_ids" value="{{ aluno.id }}">
+                        {{ aluno.nome_aluno }}</strong>
                     </label>
                 </li>
             {% endfor %}
