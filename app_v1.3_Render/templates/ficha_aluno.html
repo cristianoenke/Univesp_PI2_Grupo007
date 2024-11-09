@@ -16,7 +16,7 @@
     <h2>Treinos:</h2>
     <ul>
         {% for treino, dia, periodo in treinos_associados %}
-            <li>{{ treino }} - Dia: {{ dia }}, Período: {{ periodo }}</li>
+            <li>Dia: {{ dia }}, Período: {{ periodo }} - {{ treino }}</li>
         {% endfor %}
     </ul>
     
