@@ -11,29 +11,29 @@
 
     <h1>Adicionar Aluno</h1>
     <form action="{{ url_for('add_aluno') }}" method="post">
-        <label for="nome">Nome :</label>
+        <strong><label for="nome">Nome :</label></strong>
         <input type="text" id="nome_aluno" name="nome_aluno" required><br><br>
         
-         <label for="nome">Fone:</label>
+         <strong><label for="nome">Fone:</label></strong>
          <input type="text" id="fone_aluno" name="fone_aluno" required><br><br>
        
-         <label for="nome">Data de Nascimento:</label>
+         </strong><label for="nome">Data de Nascimento:</label></strong>
          <input type="date" id="nasc_aluno" name="nasc_aluno" required><br><br>
 
-         <label for="nome">Sexo:</label>
+         <strong><label for="nome">Sexo:</label></strong>
          <input type="text" id="sexo_aluno" name="sexo_aluno" required><br><br>
             
-         <label for="nome">E-mail:</label>
+         <strong><label for="nome">E-mail:</label></strong>
          <input type="email" id="email_aluno" name="email_aluno" required><br><br>       
         
-        <label>Instrutores :</label><br>
+        <strong><label>Instrutores :</label><br></strong>
         {% for instrutor in instrutores %}
-            <input type="checkbox" name="instrutores" value="{{ instrutor.id }}"> {{ instrutor.nome_instrutor }}<br>
+            <strong><input type="checkbox" name="instrutores" value="{{ instrutor.id }}"> {{ instrutor.nome_instrutor }}</strong><br>
         {% endfor %}
         
         <h3>Selecione os treinos e o período para cada dia da semana:</h3>
         {% for dia in ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo'] %}
-            <label>{{ dia.capitalize() }}:</label><br>
+            </strong><label>{{ dia.capitalize() }}:</label></strong><br>
             {% for treino in treinos %}
                 <input type="checkbox" name="treinos_{{ dia }}" value="{{ treino.id }}"> {{ treino.nome }}
                 <select name="periodo_{{ dia }}_{{ treino.id }}">
