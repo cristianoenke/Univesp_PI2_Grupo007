@@ -105,7 +105,9 @@ strong {
     background-color: black;
     color: white;
 }
-
+.alto-contraste #main-page .h1 {
+    color: white;
+}
 .alto-contraste button, .alto-contraste .main-button, .alto-contraste .sub-button {
     background-color: white;
     color: black;
