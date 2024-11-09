@@ -15,7 +15,7 @@
             {% for instrutor in instrutores %}
                 <li>
                     <label>
-                        <input type="checkbox" name="instrutor_ids" value="{{ instrutor.id }}">
+                        <strong><input type="checkbox" name="instrutor_ids" value="{{ instrutor.id }}"></strong>
                         {{ instrutor.nome_instrutor }}
                     </label>
                 </li>
