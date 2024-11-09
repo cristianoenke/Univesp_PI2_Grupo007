@@ -37,7 +37,7 @@ class Aluno(db.Model):
     nome_aluno = db.Column(db.String(100), nullable=False)
     fone_aluno = db.Column(db.String(15))
     nasc_aluno = db.Column(db.Date)
-    sexo_aluno = db.Column(db.String(1))
+    sexo_aluno = db.Column(db.String(15))
     email_aluno = db.Column(db.String(100))
     instrutores = db.relationship('Instrutor', secondary='instrutor_do_aluno', backref='alunos')
     treinos = db.relationship('Treino', secondary='treinos_do_aluno', backref='alunos', cascade="all, delete")
