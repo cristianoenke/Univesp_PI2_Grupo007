@@ -94,8 +94,9 @@ def add_aluno():
 
         instrutores_selecionados = request.form.getlist('instrutores')
         for instrutor_id in instrutores_selecionados:
-            # Adicionar a lógica para associar instrutores ao aluno, se necessário
-            pass
+            instrutor = Instrutor.query.get(instrutor_id)
+            novo_aluno.instrutores.append(instrutor)
+
         dias_da_semana = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo']
         for dia in dias_da_semana:
             treinos_selecionados = request.form.getlist(f'treinos_{dia}')
