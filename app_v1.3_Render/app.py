@@ -44,8 +44,8 @@ class Aluno(db.Model):
 
 # Tabela associativa para Instrutor e Aluno
 instrutor_do_aluno = db.Table('instrutor_do_aluno',
-    db.Column('instrutor_id', db.Integer, db.ForeignKey('instrutor.id'), primary_key=True),
-    db.Column('aluno_id', db.Integer, db.ForeignKey('aluno.id'), primary_key=True)
+    db.Column('instrutor_id', db.Integer, db.ForeignKey('instrutor.id', ondelete="cascade"), primary_key=True),
+    db.Column('aluno_id', db.Integer, db.ForeignKey('aluno.id', ondelete="cascade"), primary_key=True)
 )
 
 # Tabela associativa para Exercicio e Treino
